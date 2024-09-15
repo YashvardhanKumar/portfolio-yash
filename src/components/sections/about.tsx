@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import yash from "../../assets/yash.png";
+import yash from "../../assets/yash2.png";
 
 import React from "react";
 import Skills from "./skills";
