@@ -41,12 +41,12 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
         duration: 0.2,
         staggerChildren: 0.05,
       }}
-      className="flex h-24 bg-black text-white sticky px-5 top-0 z-20"
+      className="flex h-24 w-full bg-black text-white fixed px-5 top-0 z-20 max-sm:flex-col"
     >
-      <div className="font-dancing-script font-bold text-4xl m-auto">
+      <div className="font-dancing-script font-bold sm:text-4xl text-xl m-auto">
         Yashvardhan Kumar
       </div>
-      <ul className="flex gap-5 text-sm m-auto cursor-pointer">
+      <ul className="flex xs:gap-5 xs:text-sm gap-3 m-auto  cursor-pointer text-xs">
         {tabMenu.map((val, i) => (
           <li
             key={val}
@@ -68,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
         ))}
       </ul>
       <ul
-        className="flex gap-3 m-auto text-lg"
+        className="flex gap-3 m-auto text-lg max-md:hidden"
         children={handle.map((val) => {
           let Compo = val.icon;
           return (
