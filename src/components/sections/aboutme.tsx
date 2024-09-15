@@ -1,4 +1,4 @@
-import { MdEmail, MdOutlineEmail, MdPhoneAndroid } from "react-icons/md";
+import { MdOutlineEmail, MdPhoneAndroid } from "react-icons/md";
 import { handle, tabMenu } from "../../constants/tabs";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";

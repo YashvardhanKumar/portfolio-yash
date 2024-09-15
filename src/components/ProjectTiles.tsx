@@ -21,7 +21,6 @@ type ProjTileProps = {
 };
 
 const ProjectTiles: React.FC<ProjTileProps> = ({
-  id,
   name,
   type,
   technologies,
@@ -31,7 +30,6 @@ const ProjectTiles: React.FC<ProjTileProps> = ({
   index,
 }) => {
   const [showInfo, setShowInfo] = useState(false);
-  const [selectedId, setSelectedId] = useState(null);
   useEffect(() => {
     console.log(showInfo);
   });

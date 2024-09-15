@@ -1,11 +1,7 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 
-export interface ITypewritertProps {
-  delay: number;
-}
-
-export default function Typewriter({ delay }: ITypewritertProps) {
+export default function Typewriter() {
   const textIndex = useMotionValue(0);
   const texts = [
     "Yashvardhan",

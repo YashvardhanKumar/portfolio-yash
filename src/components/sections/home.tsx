@@ -12,7 +12,7 @@ const Home: React.FC<SectionProps> = ({reference}) => {
     <div className="flex-1 flex-col sm:px-10 px-5  m-auto">
       <div className=" text-ui-color text-lg font-silkscreen inline w-full">
         <span className="text-nowrap">Hello 👋 I am </span>
-        <Typewriter delay={0} />
+        <Typewriter />
       </div>
       <div className="font-lobster-two sm:text-7xl text-5xl text-pretty py-5">
         I develop Apps & Websites, and UIs

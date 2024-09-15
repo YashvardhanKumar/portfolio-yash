@@ -1,7 +1,5 @@
 import { useMotionValueEvent, useScroll, motion } from "framer-motion";
-import { MutableRefObject, useEffect, useRef, useState } from "react";
-import { FaX, FaXTwitter } from "react-icons/fa6";
-import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { useRef, useState } from "react";
 import { handle, tabMenu } from "../constants/tabs";
 
 type NavbarProps = {
@@ -13,9 +11,8 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
   const { scrollY } = useScroll();
   const [shrink, setShrink] = useState(false);
-  const [prevScroll, setPrevScroll] = useState(0);
   const navref = useRef<HTMLDivElement>(null);
-  function update(latest: number, prev: number): void {
+  function update(latest: number): void {
     let height = navref.current!.scrollHeight;
     if (latest < height) {
       setShrink(false);
@@ -25,8 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
   }
 
   useMotionValueEvent(scrollY, "change", (latest: number) => {
-    update(latest, prevScroll);
-    setPrevScroll(latest);
+    update(latest);
   });
   return (
     <motion.nav

@@ -3,7 +3,6 @@ import { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import Home from "./components/sections/home";
 import About from "./components/sections/about";
-import Skills from "./components/sections/skills";
 import Portfolio from "./components/sections/portfolio";
 import ContactMe from "./components/sections/aboutme";
 function App() {
