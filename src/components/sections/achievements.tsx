@@ -1,5 +1,3 @@
-import React from "react";
-
 const Achievements = () => {
   return (
     <div className="flex flex-col w-full md:p-10 p-2 gap-5 items-center">
