@@ -5,6 +5,7 @@ import education from "../../constants/education";
 import EducationTile from "../EducationTile";
 import ExperienceTile from "../ExperienceTile";
 import experiences from "../../constants/experiences";
+import Achievements from "./achievements";
 const Portfolio: React.FC<SectionProps> = ({ reference }) => {
   return (
     <div ref={reference} className="w-full">
@@ -67,6 +68,11 @@ const Portfolio: React.FC<SectionProps> = ({ reference }) => {
             
           ))}
         </div>
+      </div>
+
+      <div className="bg-black h-full w-full overflow-hidden lg:py-10 py-8">
+        <div className="lg:text-4xl sm:text-3xl xs:text-2xl text-lg text-white text-center p-5 pb-10">Achievements</div>
+        <Achievements/>
       </div>
     </div>
   );
