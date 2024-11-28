@@ -1,9 +1,9 @@
 export const skills = [
   {
     image:
-      "https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Android_logo_2019_%28stacked%29.svg/2346px-Android_logo_2019_%28stacked%29.svg.png",
     site: "https://developer.android.com",
-    color: "#A4C639",
+    color: "#009a40",
     name: "Android",
   },
   {
