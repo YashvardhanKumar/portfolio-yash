@@ -1,7 +1,7 @@
 const Achievements = () => {
   return (
     <div className="flex flex-col w-full md:p-10 p-2 gap-5 items-center">
-      <p className="flex flex-wrap gap-5 justify-center w-full">
+      <p className="flex flex-wrap gap-5 justify-center items-center w-full">
         <img
           src="https://leetcard.jacoblin.cool/YashvardhanKumar?theme=dark&font=Poppins&ext=contest&show_rank=false"
           alt=""
