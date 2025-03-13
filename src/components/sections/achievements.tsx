@@ -20,13 +20,18 @@ const Achievements = () => {
           className="max-w-96 w-full"
         />
         <a href="https://git.io/streak-stats">
+          <img src="https://streak-stats.demolab.com?user=YashvardhanKumar&theme=highcontrast&hide_border=true&border_radius=10&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak" className="max-w-96 w-full" />
+        </a>
+        <{" "}
+          {/*
+          a href="https://git.io/streak-stats">
           <img
             src="https://github-readme-streak-stats.herokuapp.com?user=YashvardhanKumar&theme=highcontrast&hide_border=true&border_radius=10&date_format=M%20j%5B%2C%20Y%5D"
             alt="GitHub Streak"
           className="max-w-96 w-full"
           />
-        </a>{" "}
-
+        </a>
+          */}
       </p>{" "}
       <a href="https://github.com/ryo-ma/github-profile-trophy">
           <img
