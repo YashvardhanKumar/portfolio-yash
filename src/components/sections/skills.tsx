@@ -36,7 +36,7 @@ const Skills = () => {
                 },
               }}
               viewport={{ once: false }}
-              style={{ backgroundColor: value.color }}
+              style={{ background: value.color }}
               className={`rounded-xl p-2 bg-opacity-45`}
             >
               <img
@@ -50,7 +50,6 @@ const Skills = () => {
           </div>
         ))}
       </p>
-
     </div>
   );
 };

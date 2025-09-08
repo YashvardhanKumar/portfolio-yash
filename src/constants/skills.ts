@@ -40,10 +40,9 @@ export const skills = [
     name: "Firebase",
   },
   {
-    image:
-      "https://flask.palletsprojects.com/en/stable/_images/flask-horizontal.png",
+    image: "https://flask.palletsprojects.com/en/stable/_static/flask-logo.svg",
     site: "https://flask.palletsprojects.com/",
-    color: "#1989a1",
+    color: "#51A6B9",
     name: "Flask",
   },
   {
