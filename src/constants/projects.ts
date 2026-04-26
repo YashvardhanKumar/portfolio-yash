@@ -2,21 +2,43 @@ import conacy from "../assets/conacy.png";
 import confereus from "../assets/confereus.jpg";
 import goodmerchant from "../assets/good-merchant.png";
 import mahika from '../assets/mahika.jpg';
+import coderacer from "../assets/coderacer.png";
+
 export const projects = [
+    {
+    id: "coderacer",
+    name: "Coderacer",
+    type: ["Web App"],
+    technologies: [
+      "TypeScript",
+      "Python",
+      "Tailwind CSS",
+      "Docker",
+      "Django",
+      "NextJS",
+      "PostgreSQL"
+    ],
+    description: "A Coding platform built on Next.JS and Django, used bun and uv package manager for efficiency. Using Judge0 as self-hosted code engine for submission of code and supports 5 languages.",
+    links: {
+      github: "https://github.com/YashvardhanKumar",
+    },
+    img: coderacer,
+  },
   {
     id: "confereus",
     name: "Confereus",
     type: ["Mobile App", "Web App (Landing)"],
     technologies: [
-      "NodeJS",
       "Flutter",
+      "Node.js",
       "MongoDB",
-      "JWT",
-      "SocketIO",
-      "LinkedIn Login API",
+      "Socket.IO",
+      "Firebase Storage",
+      "LinkedIn OAuth2",
+      "JWT"
     ],
     description:
-      "A full-stack mobile application using NodeJS for backend REST API, Flutter for frontend, LinkedIn Login API for authentication, and SocketIO for real-time updates.",
+      "A research conference management application, having conference scheduling, abstract submission and approval, session scheduling and notification, attendee registration, feedback, etc.",
     links: {
       github: "https://github.com/YashvardhanKumar/confereus",
       website: "https://confereus.netlify.app/",
@@ -40,12 +62,16 @@ export const projects = [
     name: "Conacy",
     type: ["Web App"],
     technologies: [
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "HTML",
       "NestJS",
       "ReactJS",
       "Neo4J",
-      "JWT",
       "GraphQL",
       "Tailwind",
+      "JWT",
       "Cloudinary",
       "Docker",
     ],

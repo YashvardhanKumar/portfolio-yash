@@ -1,13 +1,6 @@
 export const skills = [
   {
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Android_logo_2019_%28stacked%29.svg/2346px-Android_logo_2019_%28stacked%29.svg.png",
-    site: "https://developer.android.com",
-    color: "#009a40",
-    name: "Android",
-  },
-  {
-    image:
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg",
     site: "https://www.cprogramming.com/",
     color: "#024680",
@@ -22,7 +15,7 @@ export const skills = [
   },
   {
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Official_CSS_Logo.svg/2048px-Official_CSS_Logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/a/ab/Official_CSS_Logo.svg",
     site: "https://www.w3.org/Style/CSS/Overview.en.html",
     color: "#663399",
     name: "CSS",
@@ -138,5 +131,61 @@ export const skills = [
     site: "https://www.typescriptlang.org/",
     color: "#007ACC",
     name: "TypeScript",
+  },
+  {
+    image:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
+    site: "https://www.python.org/",
+    color: "#5f9ed1ff",
+    name: "Python",
+  },
+  {
+    image:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
+    site: "https://nextjs.org/",
+    color: "#222222",
+    name: "Next.js",
+  },
+  {
+    image:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg",
+    site: "https://www.djangoproject.com/",
+    color: "#ffffff",
+    name: "Django",
+  },
+  {
+    image:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg",
+    site: "https://github.com/",
+    color: "#ffffff",
+    name: "GitHub",
+  },
+  {
+    image:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/androidstudio/androidstudio-original.svg",
+    site: "https://developer.android.com/studio",
+    color: "#85f4b7ff",
+    name: "Android Studio",
+  },
+  {
+    image:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg",
+    site: "https://code.visualstudio.com/",
+    color: "#007ACC",
+    name: "VS Code",
+  },
+  {
+    image:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    site: "https://aws.amazon.com/",
+    color: "#232F3E",
+    name: "AWS",
+  },
+  {
+    image:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg",
+    site: "https://www.postgresql.org/",
+    color: "#4169E1",
+    name: "SQL",
   },
 ];

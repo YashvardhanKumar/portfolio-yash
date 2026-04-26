@@ -1,10 +1,29 @@
 import k2k from "../assets/k2k.png";
 import ncw from "../assets/ncw.png";
 import debox from "../assets/debox.png";
+import codingal from "../assets/codingal.png";
+
 const experiences = [
   {
-    position: "Full Stack Application Developer Intern",
-    company: "Debox",
+    position: "Software Engineer",
+    company: "Codingal (YC W21)",
+    url: "https://www.codingal.com/",
+    type: "EdTech",
+    location: "Bangalore, Karnataka",
+    duration: {
+      start: "Apr 2025",
+      end: "Present",
+    },
+    technologies: ["SEO", "UI/UX", "API Integration", "WordPress"],
+    links: [],
+    description:
+      "• Developed and deployed 30+ SEO pages for coding platforms and programming languages efficiently.\n• Redesigned user dashboard with best UI/UX.\n• Revamped support page and enhanced UI across homepage, and competition pages.\n• Led rapid deployment of subscription UI across home, course, and location pages with API integration.\n• Implemented WordPress shortcode for category-based blog advertisements.",
+    lor: "about:blank",
+    logo: codingal,
+  },
+  {
+    position: "Flutter Intern",
+    company: "Debox Consulting",
     url: "https://debox.co.in/",
     type: "Consultancy",
     location: "Thane, Maharashtra",
@@ -32,7 +51,7 @@ const experiences = [
       },
     ],
     description:
-      "Completed the Bawarchi application development in just over six weeks, incorporating URL redirection functionality through AppLinks. Enhanced InRadius by resolving interface issues, achieving a 20% performance boost, and introducing additional user interface components. Streamlined codebase by restructuring and condensing to 100 lines of code per file, accomplishing this optimization within a five-day period.",
+      "Completed the Bawarchi application development in just over six weeks, incorporating URL redirection functionality through AppLinks. Enhanced InRadius by resolving interface issues, achieving a 20% performance boost, and introducing additional user interface components. Streamlined codebase by restructuring and condensing to 100 lines of code per file, accomplishing this optimization within a five-day period.\n\n• Developed and optimized features in Flutter, improved architecture, usability, and performance by 20%.\n• Integrated app/universal links for seamless navigation across platforms.\n• Restructured project with <120 LoC per file, ensuring modular and maintainable code.\n• Applied best practices to enhance code reusability, readability, and team workflow efficiency.",
     lor: "https://drive.google.com/file/d/1AiJgj3aFpoDG281I_HvTSkOkVls9LVQC/view?usp=sharing",
     logo: debox,
   },

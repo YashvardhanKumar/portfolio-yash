@@ -179,7 +179,7 @@ const ExperienceTile: React.FC<ExperienceTileProps> = ({
                 <div
                   className={`${
                     !even ? "lg:text-end" : ""
-                  } py-2 max-sm:text-sm`}
+                  } py-2 max-sm:text-sm whitespace-pre-line`}
                 >
                   {description}
                 </div>

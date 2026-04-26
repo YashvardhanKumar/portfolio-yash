@@ -6,8 +6,8 @@ const education = [
     degree: "Integrated Post Graduate - Masters in Technology",
     university:
       " Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior (ABV-IIITMG)",
-    from: "July 2020",
-    to: "June 2025",
+    from: "Nov 2020",
+    to: "Jul 2025",
     course: "Information Technology",
     img: iiitm,
   },
