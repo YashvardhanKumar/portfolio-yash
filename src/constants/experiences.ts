@@ -14,7 +14,7 @@ const experiences = [
       start: "Apr 2025",
       end: "Present",
     },
-    technologies: ["SEO", "UI/UX", "API Integration", "WordPress"],
+    technologies: ["SEO", "UI/UX", "API Integration", "WordPress", "NextJS", "Python", "Django", "AWS", "Postgres"],
     links: [],
     description:
       "• Developed and deployed 30+ SEO pages for coding platforms and programming languages efficiently.\n• Redesigned user dashboard with best UI/UX.\n• Revamped support page and enhanced UI across homepage, and competition pages.\n• Led rapid deployment of subscription UI across home, course, and location pages with API integration.\n• Implemented WordPress shortcode for category-based blog advertisements.",

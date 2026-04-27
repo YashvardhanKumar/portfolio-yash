@@ -20,7 +20,7 @@ export const projects = [
     ],
     description: "A Coding platform built on Next.JS and Django, used bun and uv package manager for efficiency. Using Judge0 as self-hosted code engine for submission of code and supports 5 languages.",
     links: {
-      github: "https://github.com/YashvardhanKumar",
+      github: "https://github.com/YashvardhanKumar/coderacer-web",
     },
     img: coderacer,
   },
