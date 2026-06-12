@@ -43,7 +43,7 @@ const Portfolio: React.FC<SectionProps> = ({ reference }) => {
               <img src={work} alt="Development Work Showcase" className="object-cover max-h-[300px]" />
             </div>
           </div>
-          <div className="flex-1 bg-ui-color-2 flex flex-col gap-10">
+          <div className="flex-1 flex flex-col gap-10">
             <h2 className="lg:text-4xl sm:text-3xl xs:text-2xl text-lg text-white font-poppins relative before:content-portfolio before:-bottom-2 before:lg:w-[750px] before:md:w-[650px] before:xs:w-[540px] before:w-[430px] before:font-normal before:text-red-600 before:border-[2px_solid_#ffffff] before:font-barlowcondensed before:absolute">
               My Recent Works
             </h2>
