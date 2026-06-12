@@ -95,12 +95,12 @@ export const skills = [
     image:
       "https://github.com/user-attachments/assets/2bc70ce1-00b3-4470-a5cc-216e87cd267c",
     site: "https://neo4j.com",
-    color: "#4469A1",
+    color: "#00a3e0",
     name: "Neo4j",
   },
   {
     image:
-      "https://github.com/user-attachments/assets/0fbd675d-d28c-453d-a409-bf667e2feab8",
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-original.svg",
     site: "https://nestjs.com/",
     color: "#80234E",
     name: "NestJS",
@@ -116,7 +116,7 @@ export const skills = [
     image:
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg",
     site: "https://redux.js.org",
-    color: "#ffffff",
+    color: "#764abc",
     name: "Redux",
   },
   {
@@ -136,7 +136,7 @@ export const skills = [
     image:
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
     site: "https://www.python.org/",
-    color: "#5f9ed1ff",
+    color: "#ffd43b",
     name: "Python",
   },
   {
@@ -150,7 +150,7 @@ export const skills = [
     image:
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg",
     site: "https://www.djangoproject.com/",
-    color: "#ffffff",
+    color: "#10b981",
     name: "Django",
   },
   {
@@ -164,7 +164,7 @@ export const skills = [
     image:
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/androidstudio/androidstudio-original.svg",
     site: "https://developer.android.com/studio",
-    color: "#85f4b7ff",
+    color: "#4285f4",
     name: "Android Studio",
   },
   {
@@ -178,7 +178,7 @@ export const skills = [
     image:
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
     site: "https://aws.amazon.com/",
-    color: "#232F3E",
+    color: "#ff9900",
     name: "AWS",
   },
   {

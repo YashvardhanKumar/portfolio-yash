@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 
-export default function Typewriter() {
+export default function Typewriter({ onIndexChange }: { onIndexChange?: (index: number) => void }) {
   const textIndex = useMotionValue(0);
   const texts = [
     "Yashvardhan",
@@ -20,7 +20,7 @@ export default function Typewriter() {
   const updatedThisRound = useMotionValue(true);
 
   useEffect(() => {
-    animate(count, 60, {
+    const controls = animate(count, 60, {
       type: "tween",
       duration: 2,
       ease: "easeOut",
@@ -31,17 +31,21 @@ export default function Typewriter() {
         if (updatedThisRound.get() === true && latest > 0) {
           updatedThisRound.set(false);
         } else if (updatedThisRound.get() === false && latest === 0) {
+          let newIndex = 0;
           if (textIndex.get() === texts.length - 1) {
-            textIndex.set(0);
+            newIndex = 0;
           } else {
-            textIndex.set(textIndex.get() + 1);
+            newIndex = textIndex.get() + 1;
           }
+          textIndex.set(newIndex);
+          if (onIndexChange) onIndexChange(newIndex);
           updatedThisRound.set(true);
         }
       }
     });
+    return () => controls.stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [onIndexChange]);
 
   return <motion.span className="inline">{displayText}</motion.span>;
 }

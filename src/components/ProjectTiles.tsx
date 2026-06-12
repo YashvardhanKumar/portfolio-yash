@@ -40,16 +40,18 @@ const ProjectTiles: React.FC<ProjTileProps> = ({
       whileInView="onscreen"
       variants={{
         offscreen: {
-          scale: 0,
+          scale: 0.8,
           opacity: 0,
+          filter: 'blur(8px)',
         },
         onscreen: {
           scale: 1,
           opacity: 1,
+          filter: 'blur(0px)',
           transition: {
             type: "spring",
-            // bounce: 0.4,
-            duration: 0.8,
+            bounce: 0.3,
+            duration: 1,
             delay: 0.1 * index,
           },
         },
@@ -64,7 +66,7 @@ const ProjectTiles: React.FC<ProjTileProps> = ({
           showInfo ? "flipped" : ""
         }`}
       >
-        <div className="h-52 w-80 flip-card-inner">
+        <div className="h-60 w-80 flip-card-inner">
           <div className="h-full w-full absolute flex items-center justify-center backface-hidden ">
             <img
               src={img}
@@ -72,11 +74,11 @@ const ProjectTiles: React.FC<ProjTileProps> = ({
               className="rounded-2xl h-full w-full object-cover"
             />
           </div>
-          <div className="h-full w-full absolute flex text-sm p-3 gap-2 flex-col backface-hidden flip-card-back rounded-xl bg-ui-color-3">
+          <div className="h-full w-full absolute flex text-sm p-3 gap-2 flex-col backface-hidden flip-card-back rounded-xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]">
             <div className="overflow-ellipsis text-justify">{description}</div>
             <div className="flex flex-wrap gap-1 my-auto justify-center">
               {technologies.map((e) => (
-                <div className="px-1.5 rounded-md bg-black">{e}</div>
+                <div className="px-1.5 rounded-md bg-white/10 border border-white/10">{e}</div>
               ))}
             </div>
             <div className="flex gap-1 text-xl justify-center w-full">

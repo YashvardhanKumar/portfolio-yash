@@ -3,6 +3,7 @@ import { handle, tabMenu } from "../../constants/tabs";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import GradientOrbs from "../GradientOrbs";
 
 interface AboutMeProps extends SectionProps {
   refAt: number;
@@ -46,8 +47,25 @@ const ContactMe: React.FC<AboutMeProps> = ({
     }, 1000);
   };
   return (
-    <div ref={reference} className="h-full w-full">
-      <div className="bg-ui-color-3 flex flex-col items-center md:p-24 sm:p-10 p-5 py-10 gap-10 text-gray-400 overflow-y-clip w-full">
+    <div ref={reference} className="relative overflow-hidden h-full w-full">
+      <GradientOrbs orbs={[
+        {
+          position: "top-10 right-10",
+          size: "w-[350px] h-[350px] sm:w-[550px] sm:h-[550px]",
+          gradient: "bg-gradient-to-br from-amber-500/60 to-red-500/50",
+          blur: "blur-[100px]",
+          duration: 12,
+        },
+        {
+          position: "bottom-40 left-10",
+          size: "w-[300px] h-[300px] sm:w-[450px] sm:h-[450px]",
+          gradient: "bg-gradient-to-tr from-violet-600/60 to-blue-600/50",
+          blur: "blur-[90px]",
+          duration: 15,
+          delay: 2,
+        }
+      ]} />
+      <div className="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] flex flex-col items-center md:p-24 sm:p-10 p-5 py-10 gap-10 text-gray-400 overflow-y-clip w-full">
         {/* <div className="lg:text-4xl sm:text-3xl xs:text-2xl text-lg text-white font-poppins relative before:content-contact-us xs:before:-bottom-2 before:-bottom-1 before:lg:w-[550px] before:md:w-[450px] before:xs:w-[340px] before:w-[230px] before:absolute">
           Contact Me
         </div> */}
@@ -111,7 +129,7 @@ const ContactMe: React.FC<AboutMeProps> = ({
                 type="text"
                 name="name"
                 placeholder="Name"
-                className="bg-ui-color-2 p-3"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3"
                 autoComplete="name"
                 required
               />
@@ -119,7 +137,7 @@ const ContactMe: React.FC<AboutMeProps> = ({
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="bg-ui-color-2 p-3"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3"
                 autoComplete="email"
                 required
               />
@@ -127,21 +145,21 @@ const ContactMe: React.FC<AboutMeProps> = ({
                 type="text"
                 name="subject"
                 placeholder="Subject"
-                className="bg-ui-color-2 p-3"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3"
                 required
               />
               <textarea
                 rows={5}
                 name="message"
                 placeholder="Write your email..."
-                className="bg-ui-color-2 p-3 resize-none"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3 resize-none"
                 autoComplete="on"
                 required
               />
               <button
                 type="submit"
                 value="Send"
-                className="bg-ui-color w-full py-3 text-white"
+                className="bg-ui-color rounded-lg w-full py-3 text-white"
               >
                 Send
               </button>

@@ -42,16 +42,18 @@ const EducationTile: React.FC<EducationTileProps> = ({
         className="w-[calc(100%-2rem)] lg:w-[calc(50%-4rem)]"
         variants={{
           offscreen: {
-            x: even || window.innerWidth <= 1024 ? 300 : -300,
+            x: even || window.innerWidth <= 1024 ? 100 : -100,
             opacity: 0,
+            filter: 'blur(10px)',
           },
           onscreen: {
             x: 0,
             opacity: 1,
+            filter: 'blur(0px)',
             transition: {
               type: "spring",
-              bounce: 0.4,
-              duration: 0.8,
+              bounce: 0.3,
+              duration: 1,
               delay: 0.1 * index,
             },
           },
@@ -62,7 +64,7 @@ const EducationTile: React.FC<EducationTileProps> = ({
             !even
               ? "lg:flex-row-reverse lg:border-r-4 lg:rounded-s-xl max-lg:border-l-4 max-lg:rounded-e-xl"
               : "border-l-4 rounded-e-xl"
-          } bg-ui-color-3`}
+          } bg-white/5 backdrop-blur-xl border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]`}
         >
           <div className="flex flex-col gap-2 text-gray-400 sm:p-5 p-3">
             <div className="text-ui-color font-barlowcondensed sm:text-3xl text-xl">

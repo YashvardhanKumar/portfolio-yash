@@ -7,7 +7,7 @@ import coderacer from "../assets/coderacer.png";
 export const projects = [
     {
     id: "coderacer",
-    name: "Coderacer",
+    name: "Codeflip",
     type: ["Web App"],
     technologies: [
       "TypeScript",
@@ -20,7 +20,8 @@ export const projects = [
     ],
     description: "A Coding platform built on Next.JS and Django, used bun and uv package manager for efficiency. Using Judge0 as self-hosted code engine for submission of code and supports 5 languages.",
     links: {
-      github: "https://github.com/YashvardhanKumar/coderacer-web",
+      github: "https://github.com/YashvardhanKumar/codeflip",
+      website: "https://codeflip.co.in",
     },
     img: coderacer,
   },
@@ -79,7 +80,7 @@ export const projects = [
       "A social media website with a backend built on NestJS serving GraphQL and REST APIs, a frontend built with React and Tailwind, and Neo4J for data storage and recommendation systems.",
     links: {
       github: "https://github.com/YashvardhanKumar/conacy-web",
-      website: "https://conacy.netlify.app/",
+      website: "https://conacy.codeflip.co.in/",
     },
     img: conacy,
   },

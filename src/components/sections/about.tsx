@@ -3,10 +3,28 @@ import yash from "../../assets/yash2.png";
 
 import React from "react";
 import Skills from "./skills";
+import GradientOrbs from "../GradientOrbs";
 const About: React.FC<SectionProps> = ({ reference }) => {
   return (
-    <div ref={reference}>
-      <div className="bg-ui-color-3 min-h-10 text-gray-400 font-poppins sm:p-24 xs:p-10 p-7 sm:text-xl max-sm:text-sm flex max-lg:flex-col items-center gap-16">
+    <div ref={reference} className="relative overflow-hidden w-full">
+      <GradientOrbs orbs={[
+        {
+          position: "top-10 right-10",
+          size: "w-[350px] h-[350px] sm:w-[500px] sm:h-[500px]",
+          gradient: "bg-gradient-to-tr from-rose-500/60 to-amber-500/40",
+          blur: "blur-[100px]",
+          duration: 12,
+        },
+        {
+          position: "bottom-10 left-10",
+          size: "w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]",
+          gradient: "bg-gradient-to-br from-cyan-500/60 to-blue-500/50",
+          blur: "blur-[90px]",
+          duration: 14,
+          delay: 3,
+        }
+      ]} />
+      <div className="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] min-h-10 text-gray-400 font-poppins sm:p-24 xs:p-10 p-7 sm:text-xl max-sm:text-sm flex max-lg:flex-col items-center gap-16">
         <div className="relative sm:h-96 sm:w-96 xs:h-72 xs:w-72 h-60 w-60">
           <div className="flex items sm:w-96 absolute bottom-0 z-0 sm:h-96 xs:h-72 xs:w-72 h-60 w-60 rounded-full overflow-hidden border-8 bg-ui-color border-white shadow-[inset_20px_20px_60px_#18191f,inset_-20px_-20px_60px_#202129]"></div>
           <img
