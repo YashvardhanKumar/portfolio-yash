@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
             borderRadius: "9999px",
             width: "fit-content",
             height: "60px",
-            backgroundColor: "rgba(0, 0, 0, 0.65)", 
+            backgroundColor: "rgba(0, 0, 0, 0)", 
             borderColor: "rgba(255, 255, 255, 0.15)",
             boxShadow: "0 12px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2)",
             filter: ["blur(0px)", "blur(6px)", "blur(0px)"]
@@ -76,7 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
           duration: NAV_TRANSITION_DURATION,
           ease: "easeInOut",
         }}
-        className="pointer-events-auto flex-grow flex items-center justify-between px-6 backdrop-blur-lg border max-sm:flex-col max-sm:gap-2"
+        className="pointer-events-auto flex-grow flex items-center justify-center sm:justify-between px-6 backdrop-blur-lg border max-sm:flex-col max-sm:gap-2"
       >
         <div className="font-dancing-script font-bold sm:text-3xl text-xl flex items-center">
           Yashvardhan Kumar

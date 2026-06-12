@@ -69,9 +69,9 @@ const ContactMe: React.FC<AboutMeProps> = ({
         {/* <div className="lg:text-4xl sm:text-3xl xs:text-2xl text-lg text-white font-poppins relative before:content-contact-us xs:before:-bottom-2 before:-bottom-1 before:lg:w-[550px] before:md:w-[450px] before:xs:w-[340px] before:w-[230px] before:absolute">
           Contact Me
         </div> */}
-        <div className="lg:text-4xl sm:text-3xl xs:text-2xl text-lg text-white font-poppins relative before:lg:w-[550px] before:md:w-[450px] before:xs:w-[340px] before:w-[230px] before:content-contact-us before:absolute before:sm:-left-40 before:-left-2/3 xs:before:-bottom-1 before:-bottom-1">
+        <h2 className="lg:text-4xl sm:text-3xl xs:text-2xl text-lg text-white font-poppins relative before:lg:w-[550px] before:md:w-[450px] before:xs:w-[340px] before:w-[230px] before:content-contact-us before:absolute before:sm:-left-40 before:-left-2/3 xs:before:-bottom-1 before:-bottom-1">
           Contact Me
-        </div>
+        </h2>
         <div className="max-w-[min(500px,100%)]">
           <p>
             I’m actively seeking opportunities to contribute my expertise in
@@ -115,9 +115,9 @@ const ContactMe: React.FC<AboutMeProps> = ({
           </div>
           <div className="text-xl p-3">Or</div>
           <div className="max-lg:w-full">
-            <div className="sm:text-3xl text-xl text-center font-silkscreen text-ui-color">
+            <h3 className="sm:text-3xl text-xl text-center font-silkscreen text-ui-color">
               Email Me Here
-            </div>
+            </h3>
 
             <form
               ref={formRef}

@@ -49,7 +49,7 @@ const ExperienceTile: React.FC<ExperienceTileProps> = ({
       <div className="flex items-center justify-center sm:w-16 sm:h-16 h-8 w-8 rounded-full bg-slate-300 text-slate-500 shadow shrink-0 lg:order-1 lg:group-odd:-translate-x-1/2 lg:group-even:translate-x-1/2 -translate-x-1/2">
         <img
           src={logo}
-          alt=""
+          alt={`${company} Logo`}
           className="h-full w-full object-scale-down relative p-0.5 bg-white rounded-full "
         />
       </div>

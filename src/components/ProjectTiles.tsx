@@ -70,7 +70,7 @@ const ProjectTiles: React.FC<ProjTileProps> = ({
           <div className="h-full w-full absolute flex items-center justify-center backface-hidden ">
             <img
               src={img}
-              alt=""
+              alt={name}
               className="rounded-2xl h-full w-full object-cover"
             />
           </div>

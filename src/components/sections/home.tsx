@@ -35,9 +35,9 @@ const Home: React.FC<SectionProps> = ({reference}) => {
         <span className="text-nowrap">Hello 👋 I am </span>
         <Typewriter onIndexChange={setTextIndex} />
       </div>
-      <div className="font-lobster-two sm:text-7xl text-5xl text-pretty py-5">
+      <h1 className="font-lobster-two sm:text-7xl text-5xl text-pretty py-5">
         I develop Apps & Websites, and UIs
-      </div>
+      </h1>
       <div className="text-gray-400 font-poppins sm:text-xl text-lg">
         With a strong foundation in various programming languages and
         frameworks, I have experience building and deploying applications

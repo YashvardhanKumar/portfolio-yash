@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://yashvardhankumar.vercel.app/sitemap.xml
