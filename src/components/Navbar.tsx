@@ -65,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
           hidden: { 
             borderRadius: "9999px",
             width: "fit-content",
-            height: "60px",
+            height: "65px",
             backgroundColor: "rgba(0, 0, 0, 0)", 
             borderColor: "rgba(255, 255, 255, 0.15)",
             boxShadow: "0 12px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2)",
@@ -81,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
         <div className="font-dancing-script font-bold sm:text-3xl text-xl flex items-center">
           Yashvardhan Kumar
         </div>
-        <ul className="flex items-center xs:gap-6 xs:text-sm gap-3 cursor-pointer text-xs font-poppins">
+        <ul className="flex items-center sm:gap-6 xs:text-sm gap-3 cursor-pointer text-xs font-poppins">
           {tabMenu.map((val, i) => (
             <li
               key={val}
