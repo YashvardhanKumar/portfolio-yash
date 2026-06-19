@@ -165,7 +165,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
         </div>}
         <ul
           ref={containerRef}
-          className="relative flex items-center sm:gap-4 xs:text-sm gap-2 cursor-pointer text-xs font-poppins px-1.5 py-1"
+          className="relative flex items-center sm:gap-4 sm:text-sm gap-2 cursor-pointer text-xs font-poppins px-1.5 py-1"
         >
           {/* Stretchy circular glassmorphic pill slider background (increased opacity brand bg & border, brand glow) */}
           <motion.div
