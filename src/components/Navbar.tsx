@@ -119,7 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
           top: "0px",
         },
         hidden: { 
-          width: "88%",
+          width: "95%",
           maxWidth: "785px",
           top: "12px",
         },
