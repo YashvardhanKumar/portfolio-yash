@@ -158,7 +158,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
           duration: NAV_TRANSITION_DURATION,
           ease: "easeInOut",
         }}
-        className="pointer-events-auto flex-grow flex items-center justify-center sm:justify-between px-3 backdrop-blur-lg border max-sm:flex-col max-sm:gap-2"
+        className="pointer-events-auto flex-grow flex items-center justify-center sm:justify-between px-1 xs:px-2 sm:px-3 backdrop-blur-lg border max-sm:flex-col max-sm:gap-2"
       >
         {!shrink && <div className="font-dancing-script font-bold sm:text-3xl text-xl flex items-center">
           Yashvardhan Kumar
