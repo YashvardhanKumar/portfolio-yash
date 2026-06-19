@@ -1,5 +1,5 @@
-import { useMotionValueEvent, useScroll, motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useMotionValueEvent, useScroll, motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import { handle, tabMenu } from "../constants/tabs";
 
 type NavbarProps = {
@@ -14,6 +14,17 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
   const { scrollY } = useScroll();
   const [shrink, setShrink] = useState(false);
   const navref = useRef<HTMLDivElement>(null);
+
+  // References to measure tab layout
+  const containerRef = useRef<HTMLUListElement>(null);
+  const tabRefs = useRef<(HTMLLIElement | null)[]>([]);
+
+  // Motion values to animate the left and right edges of the capsule slider independently
+  const leftEdge = useMotionValue(0);
+  const rightEdge = useMotionValue(0);
+  const prevRefAt = useRef(refAt);
+  const isInitial = useRef(true);
+
   function update(latest: number): void {
     if (latest > 20) {
       setShrink(true);
@@ -25,6 +36,77 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
   useMotionValueEvent(scrollY, "change", (latest: number) => {
     update(latest);
   });
+
+  // Track layout and animate edges to create a stretchy "pull" effect
+  useEffect(() => {
+    const container = containerRef.current;
+    const activeTab = tabRefs.current[refAt];
+    if (!container || !activeTab) return;
+
+    const updateCoords = (animateTransition = true) => {
+      const activeRect = activeTab.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const targetLeft = activeRect.left - containerRect.left;
+      const targetRight = targetLeft + activeRect.width;
+
+      if (!animateTransition) {
+        leftEdge.set(targetLeft);
+        rightEdge.set(targetRight);
+      } else {
+        const isMovingRight = refAt > prevRefAt.current;
+        if (isMovingRight) {
+          // Moving Right: right edge (leading) shoots ahead, left edge (trailing) lags
+          animate(rightEdge, targetRight, {
+            type: "spring",
+            stiffness: 350,
+            damping: 22,
+          });
+          animate(leftEdge, targetLeft, {
+            type: "spring",
+            stiffness: 240,
+            damping: 26,
+          });
+        } else {
+          // Moving Left: left edge (leading) shoots ahead, right edge (trailing) lags
+          animate(leftEdge, targetLeft, {
+            type: "spring",
+            stiffness: 350,
+            damping: 22,
+          });
+          animate(rightEdge, targetRight, {
+            type: "spring",
+            stiffness: 240,
+            damping: 26,
+          });
+        }
+      }
+    };
+
+    if (isInitial.current) {
+      // Small timeout to ensure DOM layout is completed and measured correctly
+      const timer = setTimeout(() => {
+        updateCoords(false);
+        isInitial.current = false;
+      }, 50);
+      return () => clearTimeout(timer);
+    } else {
+      updateCoords(true);
+    }
+
+    prevRefAt.current = refAt;
+
+    const handleResize = () => updateCoords(false);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [refAt]);
+
+  // Derived width from the distance between left and right edges
+  const widthTransform = useTransform([leftEdge, rightEdge], (latest) => {
+    const l = latest[0] as number;
+    const r = latest[1] as number;
+    return r - l;
+  });
+
   return (
     <motion.nav
       ref={navref}
@@ -38,7 +120,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
         },
         hidden: { 
           width: "88%",
-          maxWidth: "1100px",
+          maxWidth: "785px",
           top: "12px",
         },
       }}
@@ -76,27 +158,37 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
           duration: NAV_TRANSITION_DURATION,
           ease: "easeInOut",
         }}
-        className="pointer-events-auto flex-grow flex items-center justify-center sm:justify-between px-6 backdrop-blur-lg border max-sm:flex-col max-sm:gap-2"
+        className="pointer-events-auto flex-grow flex items-center justify-center sm:justify-between px-3 backdrop-blur-lg border max-sm:flex-col max-sm:gap-2"
       >
-        <div className="font-dancing-script font-bold sm:text-3xl text-xl flex items-center">
+        {!shrink && <div className="font-dancing-script font-bold sm:text-3xl text-xl flex items-center">
           Yashvardhan Kumar
-        </div>
-        <ul className="flex items-center sm:gap-6 xs:text-sm gap-3 cursor-pointer text-xs font-poppins">
+        </div>}
+        <ul
+          ref={containerRef}
+          className="relative flex items-center sm:gap-4 xs:text-sm gap-2 cursor-pointer text-xs font-poppins px-1.5 py-1"
+        >
+          {/* Stretchy circular glassmorphic pill slider background (increased opacity brand bg & border, brand glow) */}
+          <motion.div
+            className="absolute top-1 bottom-1 bg-ui-color/30 backdrop-blur-md border border-ui-color/60 rounded-full z-0 pointer-events-none shadow-[0_4px_12px_rgba(230,50,75,0.35),inset_0_1px_0_rgba(255,255,255,0.15)]"
+            style={{
+              left: leftEdge,
+              width: widthTransform,
+            }}
+          />
           {tabMenu.map((val, i) => (
             <li
               key={val}
-              className={`transition-colors duration-500 ${
-                refAt == i ? "text-ui-color" : "text-white"
-              }  hover:text-ui-color`}
+              ref={(el) => (tabRefs.current[i] = el)}
+              className={`relative z-10 transition-colors duration-300 px-3.5 py-1.5 rounded-full font-medium ${
+                refAt == i ? "text-ui-color font-bold" : "text-white/60 hover:text-white"
+              }`}
               aria-label="button"
               children={val}
               onClick={() => {
                 refs[i].current?.scrollIntoView({
                   behavior: "smooth",
                 });
-                console.log(refAt);
-
-                setRefAt(refAt);
+                setRefAt(i);
               }}
             />
           ))}
@@ -106,7 +198,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
         {!shrink && (
           <div className="flex items-center gap-4 text-lg max-md:hidden">
             {handle.map((val) => {
-              let Compo = val.icon;
+              const Compo = val.icon;
               return (
                 <motion.a
                   key={val.url}
@@ -155,7 +247,7 @@ const Navbar: React.FC<NavbarProps> = ({ refAt, refs, setRefAt }) => {
       {shrink && (
         <div className="pointer-events-auto flex items-center gap-3 max-md:hidden shrink-0">
           {handle.map((val) => {
-            let Compo = val.icon;
+            const Compo = val.icon;
             return (
               <motion.a
                 key={val.url}

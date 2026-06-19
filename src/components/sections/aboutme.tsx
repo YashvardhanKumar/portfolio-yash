@@ -193,7 +193,7 @@ const ContactMe: React.FC<AboutMeProps> = ({
                 refs[i].current?.scrollIntoView({
                   behavior: "smooth",
                 });
-                setRefAt(refAt);
+                setRefAt(i);
               }}
             />
           ))}
